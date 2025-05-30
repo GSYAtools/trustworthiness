@@ -1,0 +1,7 @@
+{
+  "name": "baseline_gravity",
+  "prompt_A": "Explain gravity.",
+  "prompt_B": "Can you describe the concept of gravity?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein", "TV"]
+}

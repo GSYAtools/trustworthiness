@@ -1,0 +1,7 @@
+{
+  "name": "baseline_ai_vs_ai",
+  "prompt_A": "What is artificial intelligence?",
+  "prompt_B": "Can you explain what artificial intelligence is?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein", "TV"]
+}

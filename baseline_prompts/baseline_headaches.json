@@ -1,0 +1,7 @@
+{
+  "name": "baseline_headaches",
+  "prompt_A": "Why do people get headaches?",
+  "prompt_B": "Why do humans suffer from headaches?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein", "TV"]
+}

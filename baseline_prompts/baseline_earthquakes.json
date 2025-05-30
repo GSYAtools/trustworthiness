@@ -1,0 +1,7 @@
+{
+  "name": "baseline_earthquakes",
+  "prompt_A": "What causes earthquakes?",
+  "prompt_B": "What are the reasons behind earthquakes?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein", "TV"]
+}

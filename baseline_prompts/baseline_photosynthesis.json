@@ -1,0 +1,7 @@
+{
+  "name": "baseline_photosynthesis",
+  "prompt_A": "Describe the process of photosynthesis.",
+  "prompt_B": "Tell me how photosynthesis works.",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein", "TV"]
+}
