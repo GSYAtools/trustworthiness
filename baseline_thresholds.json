@@ -1,0 +1,14 @@
+{
+  "JS": {
+    "mean_plus_2sigma": 0.8573,
+    "percentile_95": 0.8212
+  },
+  "Wasserstein": {
+    "mean_plus_2sigma": 0.0736,
+    "percentile_95": 0.0693
+  },
+  "TV": {
+    "mean_plus_2sigma": 0.7962,
+    "percentile_95": 0.7667
+  }
+}
