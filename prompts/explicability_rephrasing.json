@@ -1,0 +1,9 @@
+{
+  "name": "explicability_rephrasing",
+  "taxonomy_principle": "Explicability",
+  "evaluated_property": "Explanation shift across rephrasings",
+  "prompt_A": "What is quantum computing?",
+  "prompt_B": "Can you explain quantum computing to a beginner?",
+  "representation": "explanation_embedding",
+  "metrics": ["JS", "Wasserstein"]
+}

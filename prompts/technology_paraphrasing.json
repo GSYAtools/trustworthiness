@@ -1,0 +1,9 @@
+{
+  "name": "technology_paraphrasing",
+  "taxonomy_principle": "Technology",
+  "evaluated_property": "Robustness to paraphrased requests",
+  "prompt_A": "Describe how to fix a flat tire.",
+  "prompt_B": "How can I repair a tire that's lost air?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein"]
+}

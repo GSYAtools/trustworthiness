@@ -1,0 +1,9 @@
+{
+  "name": "explicability_typos",
+  "taxonomy_principle": "Explicability",
+  "evaluated_property": "Explanation robustness under typos",
+  "prompt_A": "What causes earthquakes?",
+  "prompt_B": "What causes earrthquakes?",
+  "representation": "explanation_embedding",
+  "metrics": ["JS", "TV"]
+}
