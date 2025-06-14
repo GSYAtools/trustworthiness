@@ -1,0 +1,9 @@
+{
+  "name": "technology_grammatical_noise",
+  "taxonomy_principle": "Technology",
+  "evaluated_property": "Instability under grammatical noise",
+  "prompt_A": "Why do people get headaches?",
+  "prompt_B": "Why people get headaches?",
+  "representation": "sentence_embedding",
+  "metrics": ["JS", "Wasserstein"]
+}

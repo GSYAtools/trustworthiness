@@ -2,8 +2,8 @@
   "name": "explicability_genre_framing",
   "taxonomy_principle": "Explicability",
   "evaluated_property": "Explanation shift across discourse genres",
-  "prompt_A": "Summarize this newspaper article.",
-  "prompt_B": "Summarize this Reddit post.",
+  "prompt_A": "Explain, in one sentence, how you would summarize a newspaper article.",
+  "prompt_B": "Explain, in one sentence, how you would summarize a Reddit post.",
   "representation": "sentence_embedding",
-  "metrics": ["JS", "Wasserstein"]
+  "metrics": ["JS"]
 }
