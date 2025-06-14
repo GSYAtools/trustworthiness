@@ -5,7 +5,7 @@ This project implements a modular system to evaluate *trustworthiness* propertie
 
 ---
 
-## ðŸ”§ Components
+## Components
 
 ### Core Modules
 
@@ -21,7 +21,7 @@ This project implements a modular system to evaluate *trustworthiness* propertie
 | `generate_baseline.py`  | Builds empirical thresholds from control prompts |
 | `run_case.py`           | Runs a complete experimental case and generates results |
 
-### ðŸ§ª Experimental Extensions
+### Experimental Extensions
 
 | Script                        | Purpose |
 |------------------------------|---------|
@@ -30,7 +30,7 @@ This project implements a modular system to evaluate *trustworthiness* propertie
 
 ---
 
-## âš™ï¸ Requirements
+## Requirements
 
 Install dependencies:
 
@@ -46,7 +46,7 @@ OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
-## ðŸ“ Project Structure
+## Project Structure
 
 ```bash
 trust_eval/
