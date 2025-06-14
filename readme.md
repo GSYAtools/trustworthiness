@@ -50,19 +50,19 @@ OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ```bash
 trust_eval/
-â”œâ”€â”€ prompts/               # Experimental case configurations
-â”œâ”€â”€ baseline_prompts/      # Control prompts to estimate empirical thresholds
-â”œâ”€â”€ outputs/               # Model outputs (A/B)
-â”œâ”€â”€ results/               # Final reports, graphs, metrics
-â”œâ”€â”€ baseline_thresholds.json  # Empirical thresholds per metric
-â”œâ”€â”€ summary.csv            # Global summary table of all executed cases
-â”œâ”€â”€ *.py                   # Core and experimental scripts
-â””â”€â”€ .env
+prompts/               # Experimental case configurations
+baseline_prompts/      # Control prompts to estimate empirical thresholds
+outputs/               # Model outputs (A/B)
+results/               # Final reports, graphs, metrics
+baseline_thresholds.json  # Empirical thresholds per metric
+summary.csv            # Global summary table of all executed cases
+*.py                   # Core and experimental scripts
+.env
 ```
 
 ---
 
-## ðŸš€ Step-by-Step Execution
+## Step-by-Step Execution
 
 ### 1. Build Baseline (once)
 
@@ -134,7 +134,7 @@ Maps divergence metrics into a legal compliance interpretation, focusing on expe
 
 ---
 
-## ðŸ§ª Prompt Configuration Format
+## Prompt Configuration Format
 
 Example (`justice_engineer_nurse.json`):
 
@@ -152,7 +152,7 @@ Example (`justice_engineer_nurse.json`):
 
 ---
 
-## ðŸ“¤ Expected Outputs
+## Expected Outputs
 
 ```bash
 outputs/justice_engineer_nurse/A_outputs.json
@@ -164,17 +164,16 @@ results/justice_engineer_nurse/examples.json
 results/justice_engineer_nurse/kde_distances.png
 results/justice_engineer_nurse/tsne_projection.png
 results/justice_engineer_nurse/umap_projection.png
-summary.csv
 ```
 
 ---
 
-## ðŸ” Local Diagnosis (Exploratory)
+## Local Diagnosis (Exploratory)
 
 Cases exhibiting measurable distributional shift can be enriched with heuristic inspection of local outputs to interpret context sensitivity. These inspections are not statistically robust but provide useful diagnostic insight.
 
 ---
 
-## ðŸ‘¤ Author & Context
+## Author & Context
 
 This system provides a statistical diagnostic framework for evaluating trust-relevant variation in the behavior of generative models under controlled input perturbations. It is designed for *black-box* settings, does not require labels or internal access, and aligns with the *Trustworthy AI* paradigm and the *EU AI Act*.
