@@ -2,7 +2,6 @@ import os
 import json
 import numpy as np
 
-# Principios alineados con regulaciones como el EU AI Act
 RELEVANT_FOR_LAWFULNESS = {
     "Justice": True,
     "Explicability": True,
@@ -13,9 +12,6 @@ RELEVANT_FOR_LAWFULNESS = {
 }
 
 def compute_lawfulness_projection(metrics, thresholds):
-    """
-    Devuelve cumplimiento binario y continuo basado en umbrales por métrica.
-    """
     violations = []
     penalties = []
 
@@ -23,7 +19,7 @@ def compute_lawfulness_projection(metrics, thresholds):
         threshold = thresholds.get(m)
         if threshold is not None:
             violations.append(val <= threshold)
-            penalties.append(min(val / threshold, 1.0))  # Normalizado entre 0 y 1
+            penalties.append(min(val / threshold, 1.0))
 
     if not violations:
         raise ValueError("No thresholds matched the provided metrics. Cannot compute compliance.")
@@ -37,9 +33,6 @@ def compute_lawfulness_projection(metrics, thresholds):
     }
 
 def load_examples(prompt_name, output_dir="results"):
-    """
-    Carga examples.json si existe.
-    """
     path = os.path.join(output_dir, prompt_name, "examples.json")
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -47,9 +40,6 @@ def load_examples(prompt_name, output_dir="results"):
     return None
 
 def to_native(obj):
-    """
-    Convierte tipos numpy a tipos nativos de Python para evitar errores de serialización.
-    """
     if isinstance(obj, np.generic):
         return obj.item()
     if isinstance(obj, dict):
@@ -58,10 +48,7 @@ def to_native(obj):
         return [to_native(v) for v in obj]
     return obj
 
-def generate_report(prompt_name, config, metrics, thresholds, p_values=None, output_dir="results"):
-    """
-    Genera un archivo report.json que resume métricas, activación, cumplimiento normativo y p-valores si están disponibles.
-    """
+def generate_report(prompt_name, config, metrics, thresholds, p_values=None, output_dir="results", extra=None):
     if not metrics or not isinstance(metrics, dict):
         raise ValueError(f"Missing or malformed metrics for prompt {prompt_name}")
 
@@ -96,16 +83,16 @@ def generate_report(prompt_name, config, metrics, thresholds, p_values=None, out
         ]
     }
 
-    # Añadir p-valores si se proporcionan
     if p_values:
         report["p_values"] = p_values
 
-    # Añadir ejemplos si existen
+    if extra:
+        report.update(to_native(extra))
+
     examples = load_examples(prompt_name, output_dir)
     if examples:
         report["examples"] = examples
 
-    # Guardar reporte en formato JSON compatible
     out_path = os.path.join(output_dir, prompt_name, "report.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(to_native(report), f, indent=2, ensure_ascii=False)
